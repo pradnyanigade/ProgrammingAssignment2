@@ -15,3 +15,17 @@
 # but is available in the environment of the makeCacheMatrix function.
 # The <<- operator can be used to assign a value to an object in an environment 
 # that is different from the current environment. 
+
+#Start of Function 1
+makeCacheMatrix <- function(x = numeric()) {
+        
+        # holds the cached value or NULL if nothing is cached
+        # initially nothing is cached so set it to NULL
+        cache <- NULL
+        
+        # store a matrix
+        setMatrix <- function(newValue) {
+                x <<- newValue
+                # since the matrix is assigned a new value, flush the cache
+                cache <<- NULL
+        }
